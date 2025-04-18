@@ -1,0 +1,4 @@
+.accordion-button:not(.collapsed) {
+    background-color: #0d6efd !important;/* Bootstrap blue */
+    color: white !important;
+  }
