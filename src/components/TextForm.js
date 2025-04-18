@@ -8,49 +8,89 @@ export default function TextForm(props){
         setText(event.target.value);
     }
     const handleUpClick=()=>{
-        let newText=text.toUpperCase();
-        setText(newText);
-        props.alert("Converted to UpperCase","success");
+        if(text.trim()===""){
+            props.alert("Please enter something to convert","warning");
+        }
+        else{
+            let newText=text.toUpperCase();
+            setText(newText);
+            props.alert("Converted to UpperCase","success");
+        }
+        
     }
     const handleLoClick=()=>{
-        let newText=text.toLowerCase();
-        setText(newText);
-        props.alert("Converted to LowerCase","success");
+        if(text.trim()===""){
+            props.alert("Please enter something to convert","warning");
+        }
+        else{
+            let newText=text.toLowerCase();
+            setText(newText);
+            props.alert("Converted to LowerCase","success");
+        }
+        
     }
     const handleCopy=(event)=>{
         //let text2=event.target.value;
-        navigator.clipboard.writeText(text);
-        props.alert("Copied to clipboard","success");
+        if(text.trim()===""){
+            props.alert("Please enter something to copy","warning");
+        }
+        else{
+            navigator.clipboard.writeText(text);
+            props.alert("Copied to clipboard","success");
+        }
     }
     const handleSpaces=()=>{
-        let newText=text.split(/[ ]+/);
-        setText(newText.join(" "));
-        props.alert("Spaces removed","success");
+        if(text.trim()===""){
+            props.alert("Please enter something to remove spaces","warning");
+        }
+        else{
+            let newText=text.split(/[ ]+/);
+            setText(newText.join(" "));
+            props.alert("Spaces removed","success");
+        }
+        
     }
     const handleSearch=(event)=>{
         const input=event.target.value
         setSearch(input);
         if(input.trim()===""){
             setCount(0);
+            props.alert("Please enter something to search","warning");
         }
         else{
             const regex = new RegExp(search, 'gi'); // global, case-insensitive
             const matches = text.match(regex);
             setCount(matches ? matches.length : 0);
+            if(count>0){
+                props.alert(`Word ${search} has repeated ${count} times`,"success");
+            }
+            else{
+                props.alert("Word not found","warning");
+            }
         }
     }
     const reFactor=()=>{
-        navigator.clipboard.writeText(text);
-        let newText=text.charAt(0).toUpperCase()+text.slice(1);
-        newText=newText.split(/[ ]+/);
-        
-        setText(newText.join(" "));
-        props.alert("Removed Errors","success");
+        if(text.trim()===""){
+            props.alert("Please enter something to clean","warning");
+        }
+        else{
+            navigator.clipboard.writeText(text);
+            let newText=text.charAt(0).toUpperCase()+text.slice(1);
+            newText=newText.split(/[ ]+/);
+            setText(newText.join(" "));
+            props.alert("Removed Errors","success");
+        }
     }
     const handleCaptilize=()=>{
-        let newText=text.charAt(0).toUpperCase()+text.slice(1);
-        setText(newText);
-        props.alert("Converted to UpperCase","success");
+        if(text.trim()===""){
+            props.alert("Please enter something to convert","warning");
+        }
+        else{
+            let newText=text.charAt(0).toUpperCase()+text.slice(1);
+            setText(newText);
+            props.alert("Converted to UpperCase","success");
+        }
+        
     }
     return(
         <>
@@ -71,7 +111,7 @@ export default function TextForm(props){
             <div className={`container my-3 bg-${props.mode} text-${props.mode==="light"?"dark":"light"}`}>
                 <h1>Your text Summary</h1>
                 <p>{text.trim()===""?0:text.trim().split(/\s+/).length} words and {text.replace(/\s/g,"").length} characters</p>
-                <p>It takes approxmatively {0.008*text.split(" ").length} minutes to read the given text.</p>
+                <p>It takes approxmatively {0.008*(text.trim()===""?0:text.trim().split(/\s+/).length)} minutes to read the given text.</p>
                 <h2>Preview</h2>
                 <p>{text.length>0?text:"Enter something to preview it here"}</p>
                 <p>Word {search} has repeated {count} times </p>
