@@ -8,7 +8,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -53,7 +52,7 @@ function App() {
     }
     else{
       setMode("light");
-      document.body.style.backgroundColor="#FFFECE";
+      document.body.style.backgroundColor="#F4F8D3";
       showAlert("Light mode has been enabled","danger");
       document.title="TextUtils - Light Mode";
     }

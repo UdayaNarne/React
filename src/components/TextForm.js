@@ -100,13 +100,13 @@ export default function TextForm(props){
               <div className={`mb-3 bg-${props.mode}`}>
                 <textarea placeholder="Enter text here" className="form-control" id="myBox" value={text} onChange={handleOnChange} rows="8"></textarea>
               </div>
-              <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleUpClick}>Convert to UpperCase</button>
-              <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleLoClick}>Convert to LowerCase</button>
-              <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleSearch}>Search</button>
-              <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleCopy}>Copy</button>
-              <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleSpaces}>Remove Spaces</button>
-              <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleCaptilize}>Captilize start</button>
-              <button className={`btn btn-${props.color} mx-2 my-2`} onClick={reFactor}>Cleanize</button>
+              <button disabled={text.trim().length===0} className={`btn btn-${props.color} mx-2 my-2`} onClick={handleUpClick}>Convert to UpperCase</button>
+              <button disabled={text.trim().length===0} className={`btn btn-${props.color} mx-2 my-2`} onClick={handleLoClick}>Convert to LowerCase</button>
+              <button disabled={text.trim().length===0} className={`btn btn-${props.color} mx-2 my-2`} onClick={handleSearch}>Search</button>
+              <button disabled={text.trim().length===0} className={`btn btn-${props.color} mx-2 my-2`} onClick={handleCopy}>Copy</button>
+              <button disabled={text.trim().length===0} className={`btn btn-${props.color} mx-2 my-2`} onClick={handleSpaces}>Remove Spaces</button>
+              <button disabled={text.trim().length===0} className={`btn btn-${props.color} mx-2 my-2`} onClick={handleCaptilize}>Captilize start</button>
+              <button disabled={text.trim().length===0} className={`btn btn-${props.color} mx-2 my-2`} onClick={reFactor}>Cleanize</button>
             </div>
             <div className={`container my-3 rounded p-3 bg-${props.mode} text-${props.mode==="light"?"dark":"light"}`}>
                 <h1>Your text Summary</h1>
