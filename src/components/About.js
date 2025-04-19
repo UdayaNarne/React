@@ -21,7 +21,7 @@ export default function About(props){
             Analyze the Text
           </button>
     </h2>
-    <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample" >
+    <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample" >
       <div className="accordion-body text-justify" style={{color:props.mode==="light"?"black":"white"}}>
         TextUtils gives you a way to analyze your text quickly and efficiently. Be it word count, character count or the time taken to read the text. It also provides you with a way to convert your text to upper case, lower case, title case, etc. It also provides you with a way to remove extra spaces from your text. You can also copy the text to clipboard.
       </div>

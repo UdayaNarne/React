@@ -38,11 +38,20 @@ function App() {
       document.body.style.backgroundColor="#A7C6ED";
       document.title=`TextUtils - ${mode} blue Mode`;
     }
+    else if(color==="warning"){
+      document.body.style.backgroundColor="#FFEA82";
+      document.title=`TextUtils - ${mode} yellow Mode`;
+    }
+    else{
+      document.body.style.backgroundColor="white";
+      document.title=`TextUtils - ${mode} light Mode`;
+    }
     showAlert(`${message} has been enabled `,"success");
   }
   const onRedClick=()=>customTheme("danger","Red",mode);
   const onGreenClick=()=>customTheme("success","Green",mode);
   const onBlueClick=()=>customTheme("primary","Blue",mode);
+  const onYellowClick=()=>customTheme("warning","Yellow",mode);
   const toggleMode=()=>{
     if(mode==="light"){
       setMode("dark");
@@ -60,7 +69,7 @@ function App() {
   return (
     <Router>
       
-      <Navbar mode={mode} toggleMode={toggleMode} clicks={{onBlueClick,onGreenClick,onRedClick}}/>
+      <Navbar mode={mode} toggleMode={toggleMode} clicks={{onBlueClick,onGreenClick,onRedClick,onYellowClick}}/>
       <Alert alert={alert}/>
       <div className="container my-5">
       

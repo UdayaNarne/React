@@ -12,7 +12,8 @@ function Navbar(props){
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                {/* <a className="nav-link active" aria-current="page" href="/">Home</a> */}
+                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">About</Link>
@@ -20,15 +21,13 @@ function Navbar(props){
             </ul>
         </div>
         <div className="d-flex justify-space-between align-items-center gap-2 ">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" className="bi bi-circle-fill"  viewBox="0 0 16 16" onClick={props.clicks.onRedClick}>
+          {/* <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" className="bi bi-circle-fill"  viewBox="0 0 16 16" onClick={props.clicks.onRedClick}>
             <path d="M8 15A0 7 0 1 1 8 1a0 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" className="bi bi-circle-fill" viewBox="0 0 16 16" onClick={props.clicks.onGreenClick}>
-            <path d="M8 15A0 7 0 1 1 8 1a0 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" className="bi bi-circle-fill" viewBox="0 0 16 16" onClick={props.clicks.onBlueClick}>
-            <path d="M8 15A0 7 0 1 1 8 1a0 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-          </svg>
+          </svg> */}
+          <div className="bg-primary rounded mx-2" style={{width:"30px",height:"30px"}} onClick={props.clicks.onBlueClick}></div>
+          <div className="bg-success rounded mx-2" style={{width:"30px",height:"30px"}} onClick={props.clicks.onGreenClick}></div>
+          <div className="bg-danger rounded mx-2" style={{width:"30px",height:"30px"}} onClick={props.clicks.onRedClick}></div>
+          <div className="bg-warning rounded mx-2" style={{width:"30px",height:"30px"}} onClick={props.clicks.onYellowClick}></div>
         </div>
         
         <div className="form-check form-switch form-switch-lg mx-3">
