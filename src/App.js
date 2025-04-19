@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [mode,setMode]=useState("dark");
+  const [mode,setMode]=useState("light");
   const [alert,setAlert]=useState(null);
   const [color,setColor]=useState("primary");
   const showAlert=(message,type)=>{

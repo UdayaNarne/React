@@ -94,7 +94,7 @@ export default function TextForm(props){
     }
     return(
         <>
-            <div className={`container bg-${props.mode} text-${props.mode==="light"?"dark":"light"} my-20`}>
+            <div className={`container bg-${props.mode} text-${props.mode==="light"?"dark":"light"} my-20 p-3 rounded`}>
               <h1>{props.heading}</h1>
               <input type="text" className=" my-2 input" placeholder="Enter the word to Search" id="input" onChange={handleSearch}/>
               <div className={`mb-3 bg-${props.mode}`}>
@@ -108,7 +108,7 @@ export default function TextForm(props){
               <button className={`btn btn-${props.color} mx-2 my-2`} onClick={handleCaptilize}>Captilize start</button>
               <button className={`btn btn-${props.color} mx-2 my-2`} onClick={reFactor}>Cleanize</button>
             </div>
-            <div className={`container my-3 bg-${props.mode} text-${props.mode==="light"?"dark":"light"}`}>
+            <div className={`container my-3 rounded p-3 bg-${props.mode} text-${props.mode==="light"?"dark":"light"}`}>
                 <h1>Your text Summary</h1>
                 <p>{text.trim()===""?0:text.trim().split(/\s+/).length} words and {text.replace(/\s/g,"").length} characters</p>
                 <p>It takes approxmatively {0.008*(text.trim()===""?0:text.trim().split(/\s+/).length)} minutes to read the given text.</p>

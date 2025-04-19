@@ -1,4 +1,9 @@
 .accordion-button:not(.collapsed) {
     background-color: #0d6efd !important;/* Bootstrap blue */
     color: white !important;
-  }
+}
+/* Arrow white in dark mode (both collapsed and expanded) */
+.bg-dark .accordion-button::after {
+  filter: invert(1);
+}
+
