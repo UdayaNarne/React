@@ -68,11 +68,9 @@ function App() {
   }
   return (
     <Router>
-      
       <Navbar mode={mode} toggleMode={toggleMode} clicks={{onBlueClick,onGreenClick,onRedClick,onYellowClick}}/>
       <Alert alert={alert}/>
       <div className="container my-5">
-      
         <Routes>
           <Route path="/about" element={<About mode={mode} color={color}/>}/>
           <Route path="/" element={<TextForm heading="Enter the text to analyze" alert={showAlert} mode={mode} color={color}/> }/>
